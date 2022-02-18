@@ -1,0 +1,25 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "First book",
+      "author": "Some guy",
+      "category": "Fiction",
+      "ISBN": 56456
+    },
+    {
+      "id": "2",
+      "title": "Second book (edited)",
+      "author": "Another guy",
+      "category": "Fiction",
+      "ISBN": 56456
+    },
+    {
+      "id": 3,
+      "title": "Added inside app",
+      "author": "Me",
+      "category": "Other",
+      "ISBN": 666
+    }
+  ]
+}

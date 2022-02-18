@@ -1,0 +1,42 @@
+.editor-wrapper {
+    width: 100%;
+    height: 90vh;
+    background-color: rgb(12, 14, 14);
+    padding: 25px 10%;
+    color: antiquewhite;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+   label {
+    font-size: 20px;
+    margin-bottom: 10px;
+   }
+
+    input {
+      width: 300px;
+      height: 40px;
+      font-size: 25px;
+      border: none;
+    }
+    select {
+        width: 300px;
+        height: 40px;
+        font-size: 20px;
+      option {
+          cursor: pointer;
+          background-color: gray;
+        }
+    }
+
+    button {
+      margin-top: 10px;
+      width: 150px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+}
