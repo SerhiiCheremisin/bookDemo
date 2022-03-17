@@ -5,27 +5,33 @@ import deleteBook from '../services/deleteBook';
 import { useNavigate } from 'react-router-dom';
 import { setEditedBook } from '../redux/reducers/bookReducer';
 import { useSelector, useDispatch } from 'react-redux';
+import apiService from '../services/apiServices';
 
-const BookItem = ({id, title, author, category, ISBN} : bookItem) => {
+interface bookItemProps {
+  book : bookItem,
+  shouldIUpdatePage: Function
+}
+
+const BookItem = ({book, shouldIUpdatePage} : bookItemProps) => {
     const dispatch = useDispatch();
     const navigator = useNavigate();
 
     const deleteHandler = ():void  => {
-        deleteBook(id)
-        window.location.reload()
+      apiService('delete', book.id);
+      shouldIUpdatePage(false);
     }
     
     const editHandler = ():void => {
-      dispatch(setEditedBook(id));
+      dispatch(setEditedBook(book.id));
       navigator('/edit-book');
     }
 
   return (
     <div className='book-item'>
-        <h2>{title}</h2>
-        <h2>{`Written by : ${author}`}</h2>
-        <h2>{`Belongs to category : ${category}`}</h2>
-        <h2>{`ISBN : ${ISBN}`}</h2>
+        <h2>{book.title}</h2>
+        <h2>{`Written by : ${book.author}`}</h2>
+        <h2>{`Belongs to category : ${book.category}`}</h2>
+        <h2>{`ISBN : ${book.ISBN}`}</h2>
         <div className='button-group'>
          <button onClick={editHandler}>Edit</button>
          <button onClick={ deleteHandler}>Delete</button>

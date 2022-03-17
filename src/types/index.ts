@@ -3,7 +3,7 @@ export interface bookItem {
     title :string,
     author: string,
     category:string,
-    ISBN: number,
+    ISBN: string,
 }
 
 export interface bookState {

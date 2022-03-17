@@ -5,8 +5,7 @@ import { Routes, Route, Link } from "react-router-dom";
 
 //pages
 import Dashboard from './pages/Dashboard';
-import BookChanger from './pages/BookChanger';
-import EditPage from './pages/EditPage';
+import Form from './pages/Form';
 
 function App():JSX.Element {
   return (
@@ -19,8 +18,8 @@ function App():JSX.Element {
       </header>
      <Routes>
        <Route path='/' element={<Dashboard/>}/>
-       <Route path='/add-book' element={<BookChanger/>}/>
-       <Route path='/edit-book' element={<EditPage/>}/>
+       <Route path='/add-book' element={<Form/>}/>
+       <Route path='/edit-book' element={<Form/>}/>
      </Routes>
     </div>
   );
